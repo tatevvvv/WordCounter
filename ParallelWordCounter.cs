@@ -17,7 +17,10 @@ public class ParallelWordCounter : IWordCounter
             for (int i = 0; i < words.Length; i++)
             {
                 var normalizedWord = Regex.Replace(words[i], @"\p{P}", "").ToLowerInvariant();
-                if (string.IsNullOrEmpty(normalizedWord)) continue;
+                if (string.IsNullOrEmpty(normalizedWord))
+                {
+                    continue;
+                }
 
                 wordCounts.AddOrUpdate(normalizedWord, 1, (_, count) => count + 1);
 
