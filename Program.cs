@@ -14,7 +14,6 @@ namespace WordCounter
             .AddSingleton<WordCounterFactory>()
             .BuildServiceProvider();
 
-            // Get the WordCounterFactory and ResultPrinter from the DI container
             var factory = serviceProvider.GetService<WordCounterFactory>();
 
             var wordCounter = factory.GetWordCounter();
