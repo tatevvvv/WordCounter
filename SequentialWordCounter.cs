@@ -20,7 +20,10 @@
                 for (int i = 0; i < words.Length; i++)
                 {
                     var normalizedWord = Regex.Replace(words[i], @"\p{P}", "").ToLowerInvariant();
-                    if (string.IsNullOrEmpty(normalizedWord)) continue;
+                    if (string.IsNullOrEmpty(normalizedWord))
+                    {
+                        continue;
+                    }
 
                     if (wordCounts.ContainsKey(normalizedWord))
                     {
